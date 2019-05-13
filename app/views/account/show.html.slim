@@ -64,10 +64,10 @@
   br
   br
   h2
-  - if @user.id == current_user.id
-    'Все мои статьи:
-  - else
-    'Все статьи пользователя:
+    - if @user.id == current_user.id
+      'Все мои статьи:
+    - else
+      'Все статьи пользователя:
   - @articles.each do |art|
     .sumart
       h4
