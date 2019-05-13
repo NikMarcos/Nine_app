@@ -20,58 +20,58 @@
       - if @user.id == current_user.id
         .btn.btn-outline-primary.btn-sm
           = link_to 'Удалить', image_path(u), method: :delete
-      br
   br
-    - if @user.id == current_user.id
-      = form_for :image, url: images_path, method: :post do |f|
-        .form-group
-          = 'Изображение'
-          br
-          br
-          = f.text_field :title
-          br
-          = f.file_field :pic
-          = f.hidden_field :user_id, :value => @user.id
-          br
-          .btn.btn-success
-            = f.submit
+  br
+  - if @user.id == current_user.id
+    = form_for :image, url: images_path, method: :post do |f|
+      .form-group
+        = 'Изображение'
+        br
+        br
+        = f.text_field :title
+        br
+        = f.file_field :pic
+        = f.hidden_field :user_id, :value => @user.id
+        br
+        .btn.btn-success
+          = f.submit
     br
     br
-      - if @musics.present?
-        - @musics.each do |t|
-          .music_cont
-            = t.title
-            br
-            = audio_tag(t.track.url, preload: 'auto', controls: true)
-            - if @user.id == current_user.id
-              .btn.btn-outline-primary.btn-sm
-                = link_to 'Удалить', music_path(t), method: :delete
+  - if @musics.present?
+    - @musics.each do |t|
+        .music_cont
+          = t.title
+          br
+          = audio_tag(t.track.url, preload: 'auto', controls: true)
+          - if @user.id == current_user.id
+            .btn.btn-outline-primary.btn-sm
+              = link_to 'Удалить', music_path(t), method: :delete
     br
     br
-    - if @user.id == current_user.id
-      = form_for :music, url: musics_path, method: :post do |f|
-        .form-group
-          = 'Песня'
-          br
-          br
-          = f.text_field :title
-          br
-          = f.file_field :track
-          = f.hidden_field :user_id, :value => @user.id
-          br
-          .btn.btn-success
-            = f.submit
-    br
-    br
-    h2
-      - if @user.id == current_user.id
-        'Все мои статьи:
-      - else
-        'Все статьи пользователя:
-    - @articles.each do |art|
-      .sumart
-        h4
-          = art.title
-        span.margdiv
-          = truncate(art.body, length: 45)
-        = link_to '(прочитать всю статью)', art, method: :get
+  - if @user.id == current_user.id
+    = form_for :music, url: musics_path, method: :post do |f|
+      .form-group
+        = 'Песня'
+        br
+        br
+        = f.text_field :title
+        br
+        = f.file_field :track
+        = f.hidden_field :user_id, :value => @user.id
+        br
+        .btn.btn-success
+          = f.submit
+  br
+  br
+  h2
+  - if @user.id == current_user.id
+    'Все мои статьи:
+  - else
+    'Все статьи пользователя:
+  - @articles.each do |art|
+    .sumart
+      h4
+        = art.title
+      span.margdiv
+        = truncate(art.body, length: 45)
+      = link_to '(прочитать всю статью)', art, method: :get
