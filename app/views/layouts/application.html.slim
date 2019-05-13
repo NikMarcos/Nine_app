@@ -1,0 +1,41 @@
+doctype html
+html
+ head
+  title NineApp
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+
+ body
+  navbar.navbar-expand-lg.navbar-dark
+    .navbar-brand
+        = link_to 'Домашняя страница', root_path, method: :get
+    .navbar-brand
+      = link_to 'Статьи пользователей', articles_path, method: :get
+    - if user_signed_in?
+        .navbar-brand
+          = link_to 'Выйти', destroy_user_session_path, method: :get
+        - if current_page?(account_path(current_user))
+          .navbar-brand
+              = link_to 'Редактировать аккаунт', edit_user_registration_path, method: :get
+        .navbar-brand
+          = link_to 'Мой аккаунт', account_path(current_user), method: :get
+    - else
+        .navbar-brand
+            = link_to 'Войти', new_user_session_path, method: :get
+        .navbar-brand
+            = link_to 'Зарегестрироваться', new_user_registration_path, method: :get
+    - if user_signed_in?
+      - if current_page?(controller: 'account', action: 'index')
+        .navbar-brand
+            = text_field_tag :search, nil, class: 'input', placeholder: 'Поиск на странице'
+
+  br
+  br
+
+  p.notice
+    = notice
+  p.alert
+    = alert
+  .forbodyclass
+    = yield

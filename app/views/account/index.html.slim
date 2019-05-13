@@ -1,0 +1,7 @@
+.content
+  - @users.each do |user|
+    div class=["container", user.email, user.name] data-link=account_path(user.id)
+       h5
+        = "Email: #{user.email}"
+       h5
+        = "The date of registration: #{user.created_at}"

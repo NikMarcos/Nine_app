@@ -1,0 +1,14 @@
+ru:
+  acc:
+    email: 'Электронная почта: '
+    name: 'Имя: '
+  activerecord:
+    model:
+      article:
+        one: 'Статья'
+        other: 'Статьи'
+    attributes:
+      article:
+        new: 'Новая статья'
+        name: 'Название '
+        author: 'Автор: '

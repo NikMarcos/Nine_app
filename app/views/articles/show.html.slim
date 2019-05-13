@@ -1,0 +1,25 @@
+#notice
+  = notice
+.content
+  p
+    strong
+      ' Title:
+    = @article.title
+  p
+    strong
+      ' Body:
+    = @article.body
+  p
+    strong
+      ' User:
+    = @article.user.name
+  - @article.pictures.each do |u|
+    .img-show
+      = image_tag u.url(:thumb)
+  br
+  - if user_signed_in?
+    - if @article.user_id == current_user.id
+      br
+      =' link_to 'Edit', edit_article_path(@article)
+      =' link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' }
+  = link_to 'Back', articles_path

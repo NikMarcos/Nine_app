@@ -1,0 +1,54 @@
+/*
+ *= require_self
+ *= require_tree .
+*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  background: url('Font.JPG') no-repeat center center fixed;
+  margin-left: 30px;
+  padding-bottom: 20px;
+  -moz-background-size: 100%; /* Firefox 3.6+ */
+  -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+  -o-background-size: 100%; /* Opera 9.6+ */
+  background-size: 100%; /* Современные браузеры */
+}
+
+.content {
+  margin-left: 20px;
+}
+
+.container {
+  background-color: green;
+}
+
+.sumart {
+  margin-right: 20px;
+  display: inline-block;
+}
+
+.margdiv {
+  margin-right: 5px;
+}
+
+.image_cont {
+  margin-right: 20px;
+  display: inline-block;
+}
+
+.music_cont {
+  margin-right: 20px;
+  display: inline-block;
+}
+
+p {
+  text-indent: 1.5em;
+  text-align: justify;
+  margin-right: 20px;
+}
+
+.authorright {
+  float: right;
+  margin-right: 20px;
+}
