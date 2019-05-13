@@ -19,7 +19,7 @@
       = image_tag u.pic.url(:thumb)
       - if @user.id == current_user.id
         .btn.btn-outline-primary.btn-sm
-          = link_to 'Удалить', image_path(u), method: :delete
+          = link_to 'Удалить изображение', image_path(u), method: :delete
   br
   br
   - if @user.id == current_user.id
