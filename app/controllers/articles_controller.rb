@@ -24,6 +24,12 @@ class ArticlesController < ApplicationController
   def edit
   end
 
+  def set_images
+    @article1 = Article.find(10)
+    gon.splited_article = @article1
+    # @array_of_image_blocks = Array.new
+  end
+
   # POST /articles
   # POST /articles.json
   def create
@@ -38,6 +44,10 @@ class ArticlesController < ApplicationController
       end
     end
   end
+
+  # def set_article_images
+  #
+  # end
 
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json

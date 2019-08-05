@@ -4,6 +4,7 @@ class AccountController < ApplicationController
 
 def index
   @users = User.all
+  @admins = User.admin
 end
 
 def show

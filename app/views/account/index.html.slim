@@ -5,3 +5,6 @@
         = "Email: #{user.email}"
        h5
         = "The date of registration: #{user.created_at}"
+  - @admins.each do |admin|
+    .admin_style
+      = "Администратор: #{admin.name}"

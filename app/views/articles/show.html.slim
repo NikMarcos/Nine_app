@@ -8,11 +8,27 @@
   p
     strong
       ' Body:
-    = @article.body
+    div.first_block.clearfix
+      .first_image
+        = image_tag @article.pictures[0].url(:large) if @article.pictures[0]
+      .first_text
+        = @article.body[0..2500]
+    div.second_block.clearfix
+      .second_image
+        = image_tag @article.pictures[1].url(:large) if @article.pictures[1]
+      .second_text
+        = @article.body[2001..5000]
+
+    div.third_block.clearfix
+      .third_image
+        = image_tag @article.pictures[1].url(:large) if @article.pictures[1]
+      .third_text
+        = @article.body[5001..-1]
   p
     strong
-      ' User:
+      ' Author:
     = @article.user.name
+
   - @article.pictures.each do |u|
     .img-show
       = image_tag u.url(:thumb)

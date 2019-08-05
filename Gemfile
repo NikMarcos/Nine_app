@@ -16,6 +16,7 @@ gem 'coffee-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-sass'
 gem 'html2slim', '~> 0.2.0'
+gem 'gon'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

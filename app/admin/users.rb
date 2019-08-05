@@ -70,11 +70,13 @@ ActiveAdmin.register User do
         user = User.find(params[:id])
         user.update(role: 'user')
         redirect_to admin_user_path(user)
-      end
-#
+    end
+
+permit_params :name, :email
+
 # permit_params do
 #   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
+#   permitted << :other if params[:action] == 'update' && current_user.admin?
 #   permitted
 # end
 

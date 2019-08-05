@@ -1,0 +1,6 @@
+#common_block
+#download_image_block
+  form#form_block action="/get_images/" method="POST" enctype="multipart/form-data"
+    input type="hidden" name="authenticity_token" value="token_value"
+    input type="hidden" name="image_article[article_id]" value="10"
+    input.sub type="submit" value="Submit"

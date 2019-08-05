@@ -6,7 +6,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def show?
-    return true if user.present? && user.role['user']
+    return true if user.present? || user.role['user']
   end
 
   def new?
@@ -15,6 +15,14 @@ class ArticlePolicy < ApplicationPolicy
 
   def create?
     user.present?
+  end
+
+  def edit?
+    true
+  end
+
+  def update?
+    true
   end
 
   def destroy?

@@ -9,7 +9,7 @@ br
   br
   .bodymarg
     p
-      = article.body
+      = truncate(article.body, length: 500)
   br
   .authorright
     strong

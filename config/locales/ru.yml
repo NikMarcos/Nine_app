@@ -1,4 +1,7 @@
 ru:
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M:%S"
   acc:
     email: 'Электронная почта: '
     name: 'Имя: '
@@ -6,7 +9,8 @@ ru:
     model:
       article:
         one: 'Статья'
-        other: 'Статьи'
+        many: "Статьи"
+        other: 'Статью'
     attributes:
       article:
         new: 'Новая статья'
